@@ -1,0 +1,79 @@
+{
+    "about": {
+        "id": 6520443,
+        "query": "garden plants nursery",
+        "pageURL": "https://pixabay.com/photos/plants-soil-pots-tools-gardening-6520443/",
+        "userURL": "https://pixabay.com/users/2218222/",
+        "user": "Ylanite"
+    },
+    "card-crew": {
+        "id": 7977570,
+        "query": "gardener working garden",
+        "pageURL": "https://pixabay.com/photos/family-father-dad-plant-town-7977570/",
+        "userURL": "https://pixabay.com/users/2822485/",
+        "user": "HungTran90"
+    },
+    "card-design": {
+        "id": 5975562,
+        "query": "landscape design garden",
+        "pageURL": "https://pixabay.com/photos/zen-garden-garden-lake-pond-creek-5975562/",
+        "userURL": "https://pixabay.com/users/6795508/",
+        "user": "fietzfotos"
+    },
+    "card-guarantee": {
+        "id": 7020751,
+        "query": "stone garden steps",
+        "pageURL": "https://pixabay.com/photos/stairs-stone-wall-drywall-7020751/",
+        "userURL": "https://pixabay.com/users/2348028/",
+        "user": "anaterate"
+    },
+    "home-hero": {
+        "id": 2767545,
+        "query": "landscaped garden lawn path",
+        "pageURL": "https://pixabay.com/photos/bridge-park-grass-trees-2767545/",
+        "userURL": "https://pixabay.com/users/1118992/",
+        "user": "diego_torres"
+    },
+    "service-decking-and-fencing": {
+        "id": 3346929,
+        "query": "wooden deck garden terrace",
+        "pageURL": "https://pixabay.com/photos/wooden-wood-house-architecture-3346929/",
+        "userURL": "https://pixabay.com/users/8671385/",
+        "user": "krakowgardendesign"
+    },
+    "service-garden-design": {
+        "id": 2040714,
+        "query": "formal garden landscaping",
+        "pageURL": "https://pixabay.com/photos/garden-park-castle-landscaping-art-2040714/",
+        "userURL": "https://pixabay.com/users/1032521/",
+        "user": "Tama66"
+    },
+    "service-garden-maintenance": {
+        "id": 5329691,
+        "query": "lawn mowing",
+        "pageURL": "https://pixabay.com/photos/lawn-mower-mow-gardening-lawn-5329691/",
+        "userURL": "https://pixabay.com/users/509903/",
+        "user": "congerdesign"
+    },
+    "service-outdoor-lighting": {
+        "id": 8613050,
+        "query": "garden lights night",
+        "pageURL": "https://pixabay.com/photos/lodge-manor-chateau-night-lights-8613050/",
+        "userURL": "https://pixabay.com/users/7068951/",
+        "user": "ykaiavu"
+    },
+    "service-patios-and-paving": {
+        "id": 1547092,
+        "query": "stone patio garden",
+        "pageURL": "https://pixabay.com/photos/white-outdoor-patio-furniture-1547092/",
+        "userURL": "https://pixabay.com/users/1139623/",
+        "user": "1139623"
+    },
+    "service-planting-and-lawns": {
+        "id": 5033172,
+        "query": "flower border garden",
+        "pageURL": "https://pixabay.com/photos/lupines-dark-pink-in-colour-freesias-5033172/",
+        "userURL": "https://pixabay.com/users/10324218/",
+        "user": "GAIMARD"
+    }
+}

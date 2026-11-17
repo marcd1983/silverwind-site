@@ -1,0 +1,36 @@
+{
+    "name": "antlion/silverwind-site",
+    "description": "Site features for Silverwind sites: services, ribbon CTAs, testimonials and partners blocks, consent-gated scripts, block search, SEO structured data, security headers and a demo seed",
+    "type": "silverstripe-vendormodule",
+    "license": "BSD-3-Clause",
+    "keywords": ["silverstripe", "silverwind", "elemental", "tailwind"],
+    "require": {
+        "php": "^8.3",
+        "silverstripe/cms": "^6.0",
+        "silverstripe/linkfield": "^5.0",
+        "dnadesign/silverstripe-elemental": "^6.0",
+        "antlion/silverwind-blocks": "^1.0@dev",
+        "antlion/silverwind-settings": "^1.0@dev",
+        "innoweb/silverstripe-cookie-consent": "^5.0",
+        "symbiote/silverstripe-gridfieldextensions": "^5.0",
+        "undefinedoffset/sortablegridfield": "^3.0",
+        "unclecheese/display-logic": "^4.0",
+        "guzzlehttp/guzzle": "^7.0"
+    },
+    "suggest": {
+        "antlion/store-location": "Store locations; enquiries are logged to Form Submissions",
+        "dnadesign/silverstripe-elemental-userforms": "The demo seed adds an enquiry form block",
+        "plasticstudio/silverstripe-seo": "SEO fields alongside the structured data"
+    },
+    "autoload": {
+        "psr-4": {
+            "Antlion\\SilverwindSite\\": "src/",
+            "Antlion\\SilverwindSite\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-main": "1.0.x-dev"
+        }
+    }
+}

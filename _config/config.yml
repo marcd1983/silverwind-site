@@ -1,0 +1,112 @@
+---
+Name: silverwind-site
+After:
+  - '#elementalconfig'
+  - '#silverwind-blocks'
+---
+# Page fields and hooks the Silverwind theme uses. "Page" and "PageController"
+# are the site's own classes (global namespace), as usual in Silverstripe.
+Page:
+  extensions:
+    - Antlion\SilverwindSite\Extensions\PageSeoExtension
+    - Antlion\SilverwindSite\Extensions\MegaMenuExtension
+    - Antlion\SilverwindSite\Extensions\PageOptionsExtension
+    - Antlion\SilverwindSite\Extensions\RibbonCtaExtension
+    - Antlion\SilverwindSite\Search\BlockSearchExtension
+
+PageController:
+  extensions:
+    - Antlion\SilverwindSite\Extensions\SiteControllerExtension
+
+SilverStripe\SiteConfig\SiteConfig:
+  extensions:
+    - Antlion\SilverwindSite\Extensions\SiteConfigExtension
+
+# Keep each page's block text current for site search (BlockSearchExtension)
+DNADesign\Elemental\Models\BaseElement:
+  extensions:
+    - Antlion\SilverwindSite\Search\ElementSearchTextExtension
+
+# Ribbon CTA blocks are bands (like Hero/Section): full width by default
+Antlion\SilverwindBlocks\Extensions\ElementStyleExtension:
+  default_widths:
+    Antlion\SilverwindSite\Elements\ElementRibbonCta: full
+
+---
+Name: silverwind-site-userforms
+Only:
+  classexists: 'DNADesign\ElementalUserForms\Model\ElementForm'
+---
+# Form blocks need a request/session to render, and their labels aren't
+# useful search content
+DNADesign\ElementalUserForms\Model\ElementForm:
+  search_indexable: false
+
+---
+Name: silverwind-site-store-location
+Only:
+  moduleexists: 'antlion/store-location'
+---
+# Log antlion/store-location enquiries to Form Submissions
+Antlion\StoreLocation\Pages\StoreLocationPageController:
+  extensions:
+    - Antlion\SilverwindSite\Extensions\LocationEnquiryLogExtension
+
+---
+Name: silverwind-site-cookieconsent
+After:
+  - '#cookieconsent'
+---
+# Cookie groups visitors can accept in the banner. Scripts in Settings >
+# Scripts and map embeds/the store locator are tied to one of these and only
+# load once it's accepted. Keys under each group: "local" for cookies on this
+# domain, or a provider host with dots as underscores (e.g. google_com).
+# Group titles/descriptions are edited in Settings > Cookie Consent.
+Innoweb\CookieConsent\CookieConsent:
+  cookies:
+    Analytics:
+      local:
+        - _ga
+        - _ga_*
+        - _gid
+    Marketing:
+      local:
+        - _fbp
+        - _gcl_au
+    External:
+      google_com:
+        - NID
+        - AEC
+
+---
+Name: silverwind-site-security
+After:
+  - '#requestprocessors'
+---
+# Front-end security headers; see SecurityHeadersMiddleware. The
+# Content-Security-Policy is report-only until csp_enforce: true.
+SilverStripe\Core\Injector\Injector:
+  SilverStripe\Control\Director:
+    properties:
+      Middlewares:
+        SecurityHeadersMiddleware: '%$Antlion\SilverwindSite\Middleware\SecurityHeadersMiddleware'
+
+---
+Name: silverwind-site-legacy-classnames
+---
+# These classes lived in projects' app/ before this module (tables are
+# unchanged); db:build rewrites stored ClassName values.
+SilverStripe\Dev\Command\DbBuild:
+  classname_value_remapping:
+    Elements\ElementServices: Antlion\SilverwindSite\Elements\ElementServices
+    Elements\ElementRibbonCta: Antlion\SilverwindSite\Elements\ElementRibbonCta
+    Elements\ElementTestimonials: Antlion\SilverwindSite\Elements\ElementTestimonials
+    Elements\ElementPartners: Antlion\SilverwindSite\Elements\ElementPartners
+    Services\ServicePage: Antlion\SilverwindSite\Pages\ServicePage
+    Services\ServiceHolderPage: Antlion\SilverwindSite\Pages\ServiceHolderPage
+    App\Models\RibbonCta: Antlion\SilverwindSite\Models\RibbonCta
+    App\Models\Testimony: Antlion\SilverwindSite\Models\Testimony
+    App\Models\Partner: Antlion\SilverwindSite\Models\Partner
+    App\Models\SiteScript: Antlion\SilverwindSite\Models\SiteScript
+    App\Models\FormSubmission: Antlion\SilverwindSite\Models\FormSubmission
+    App\Models\ModalTriggerLink: Antlion\SilverwindSite\Models\ModalTriggerLink
